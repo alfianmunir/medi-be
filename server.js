@@ -4,9 +4,10 @@ const express = require("express")
 const app = express()
 const PORT = process.env.PORT || 8001
 const serveIndex = require('serve-index');
+const cors = require('cors')
 
 const db = require("./models/index");
-app.use(require('cors')())
+app.use(cors())
 
 
 db.sequelize.sync().then(() => {
